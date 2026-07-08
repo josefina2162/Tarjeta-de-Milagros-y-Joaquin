@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+    background:#F3EDDD;
+}
+
+section{
+    width:100%;
+    margin-top: 1px;
+}
+
+.tarjeta{
+    width:100%;
+    display:block;
+}
+
+#texto{
+ margin-top: -80px;
+}
+
+#horario{
+ margin-top: -20px;
+}
+
+#ubicacion{
+ margin-top: 30px;
+}
+
+#dresscode{
+ margin-top: -100px;
+}
+
+#confirmar{
+ margin-top: 30px;
+}
+
+#fotos{
+ margin-top: -80px;
+}
+
+/* Todas las secciones con botones */
+#ubicacion,
+#menu,
+#musica,
+#regalos,
+#confirmar,
+#fotos{
+    position: relative;
+}
+
+.btn-ubicacion,
+.btn-menu, 
+.btn-musica,
+.btn-regalos,
+.btn-confirmar,
+.btn-fotos{
+    position:absolute;
+    left:0;
+    width:100%;
+    height:120px;          /* después lo ajustamos */
+    border:none;
+    color:rgba(255, 255, 255, 0);
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn-ubicacion{
+    top:25%;
+    background:rgba(255, 0, 0, 0);
+}
+
+.btn-menu{
+    top:35%;
+    background:rgba(0, 0, 255, 0);
+}
+
+.btn-musica{
+    top:45%;
+    background:rgba(244, 10, 228, 0);
+}
+
+.btn-regalos{
+    top:60%;
+    background:rgba(0, 128, 0, 0);
+}
+
+.btn-confirmar{
+    top:55%;
+    background:rgba(255, 166, 0, 0);
+}
+
+.btn-fotos{
+    top:60%;
+    background:rgba(128, 0, 128, 0);
+}
+
+/* Botón regalos */
+
+/* POPUP */
+
+#popup-regalos{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0, 0, 0, 0);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+#popup-regalos.mostrar{
+
+    display:flex;
+
+}
+
+#popup-regalos img{
+
+    width:100%;
+
+    max-width:500px;
+
+    display:block;
+
+}
+
+/* el popup necesita posición relativa */
+
+#popup-regalos{
+
+    position:fixed;
+
+}
+
+#popup-regalos img{
+
+    position:relative;
+
+}
+
+/* BOTON CERRAR */
+
+.btn-cerrar-popup{
+    position: absolute;
+    top: 30%;
+    width:500px;
+    height: 180px;
+    background:rgba(255, 0, 0, 0);
+    opacity:.4;
+    border:none;
+}
+
+/* BOTON COPIAR */
+
+.btn-copiar-alias {
+    position: absolute;
+    bottom: 25%;
+    width: 100%;
+    height: 220px;
+    background: rgba(0, 255, 0, 0);
+    opacity: .4;
+    border: none;
+}
+
+/* ANIMSCIÓN */
+
+section{
+    opacity:0;
+    transform:translateX(50px);
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+}
+
+section.visible{
+    opacity:1;
+    transform:translateX(0);
+}

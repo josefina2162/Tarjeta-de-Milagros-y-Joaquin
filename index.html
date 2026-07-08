@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mis 15</title>
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#F3EDDD">
+</head>
+
+<body>
+
+<main>
+
+  <!-- INICIO -->
+  <section id="inicio">
+    <img class="tarjeta" src="" alt="Inicio">
+  </section>
+
+  <!-- FECHA -->
+  <section id="fecha">
+    <img class="tarjeta" src="" alt="Inicio">
+  </section>
+
+  <!-- TEXTO -->
+  <section id="texto">
+    <img class="tarjeta" src="" alt="Inicio">
+  </section>
+
+  <!-- HORARIO -->
+  <section id="horario">
+    <img class="tarjeta" src="" alt="Inicio">
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTÓN MAPA (lo activamos después) -->
+    <button class="btn-ubicacion">
+      Abrir mapa
+    </button>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section id="dresscode">
+    <img class="tarjeta" src="" alt="Inicio">
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <img class="tarjeta" src="" alt="Inicio">
+   
+    <!-- BOTÓN MENU -->
+    <button class="btn-menu">
+      Menu
+    </button>
+  </section>
+
+  <!-- MUSICA -->
+  <section id="musica">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTÓN PLAYLIST -->
+    <button class="btn-musica">
+      Escuchar playlist
+    </button>
+  </section>
+
+  <!-- REGALOS -->
+  <section id="regalos">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTONES REGALOS -->
+    <button class="btn-regalos"></button>
+  </section>
+
+  <!-- CONFIRMAR -->
+  <section id="confirmar">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTÓN WHATSAPP -->
+    <button class="btn-confirmar">
+      Confirmar asistencia
+    </button>
+  </section>
+
+  <!-- FOTOS -->
+  <section id="fotos">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTÓN GALERÍA -->
+    <button class="btn-fotos">
+      Ver fotos
+    </button>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section id="instagram">
+    <img class="tarjeta" src="" alt="Inicio">
+
+    <!-- BOTÓN INSTAGRAM -->
+    <!--
+    <button class="btn-instagram">
+      Instagram
+    </button>
+    -->
+  </section>
+
+  <!-- POPUP REGALOS -->
+<div id="popup-regalos">
+
+    <img id="img-popup" class="tarjeta" src="" alt="Alias">
+
+    <button class="btn-cerrar-popup"></button>
+
+    <button class="btn-copiar-alias"></button>
+
+</div>
+</main>
+
+<script>
+
+// Detectar Safari en iPhone/iPad
+function esSafariIOS() {
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &&
+         /iP(ad|hone|od)/.test(navigator.userAgent);
+}
+
+// Cargar imágenes según dispositivo
+function cargarImagenes() {
+
+  const sufijo = esSafariIOS()
+    ? '_ios.svg'
+    : '_android.svg';
+
+  document.querySelector('#inicio .tarjeta').src =
+    'assets/Inicio' + sufijo;
+
+  document.querySelector('#fecha .tarjeta').src =
+    'assets/Fecha' + sufijo;
+
+  document.querySelector('#texto .tarjeta').src =
+    'assets/Text' + sufijo;
+
+  document.querySelector('#horario .tarjeta').src =
+    'assets/Horario' + sufijo;
+
+  document.querySelector('#ubicacion .tarjeta').src =
+    'assets/Ubicacion' + sufijo;
+
+  document.querySelector('#dresscode .tarjeta').src =
+    'assets/DressCode' + sufijo;
+
+  document.querySelector('#menu .tarjeta').src =
+    'assets/Menu' + sufijo;
+
+  document.querySelector('#musica .tarjeta').src =
+    'assets/Musica' + sufijo;
+
+  document.querySelector('#regalos .tarjeta').src =
+    'assets/Regalos' + sufijo;
+
+  document.querySelector('#confirmar .tarjeta').src =
+    'assets/Confirmar' + sufijo;
+
+  document.querySelector('#fotos .tarjeta').src =
+    'assets/Fotos' + sufijo;
+
+  document.querySelector('#instagram .tarjeta').src =
+    'assets/Instagram' + sufijo;
+  
+  document.querySelector('#img-popup').src =
+    'assets/Alias' + sufijo;
+}
+
+window.addEventListener('load', cargarImagenes);
+
+//LINKS DE BOTONES _ Ubicación
+const btnUbicacion = document.querySelector('.btn-ubicacion');
+
+if (btnUbicacion) {
+  btnUbicacion.addEventListener('click', () => {
+    window.open('https://maps.app.goo.gl/735ysSNXP47BRM8k8', '_blank');
+  });
+}
+
+//LINKS DE BOTONES _ Menu
+const btnMenu = document.querySelector('.btn-menu');
+
+if (btnMenu) {
+  btnMenu.addEventListener('click', () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyjGyAum25W42dMwfxUsSsZluJsPAJDFFxqvb4i9lk4P5UIg/viewform?usp=publish-editor', '_blank');
+  });
+}
+
+//LINKS DE BOTONES _ Musica
+const btnMusica = document.querySelector('.btn-musica');
+
+if (btnMusica) {
+  btnMusica.addEventListener('click', () => {
+    window.open('https://open.spotify.com/playlist/1BePj62x32LqWXhFJMhV4J?si=20eb09ee11cf4f9c&pt=13923c7c163f618637582e6d98a5cf2c', '_blank');
+  });
+}
+
+//LINKS DE BOTONES _ Fotos
+const btnFotos = document.querySelector('.btn-fotos');
+
+if (btnFotos) {
+  btnFotos.addEventListener('click', () => {
+    window.open('https://drive.google.com/drive/folders/1S1K40RFAXgjfj8pXKh_8I4RTgL0C761G?usp=sharing', '_blank');
+  });
+}
+
+//Boton regalos
+const popup = document.getElementById("popup-regalos");
+
+const btnRegalos = document.querySelector(".btn-regalos");
+
+const btnCerrar = document.querySelector(".btn-cerrar-popup");
+
+const btnCopiar = document.querySelector(".btn-copiar-alias");
+
+btnRegalos.addEventListener("click", () => {
+
+    popup.classList.add("mostrar");
+
+});
+
+btnCerrar.addEventListener("click", () => {
+
+    popup.classList.remove("mostrar");
+
+});
+
+btnCopiar.addEventListener("click", async () => {
+
+    try{
+
+        await navigator.clipboard.writeText("alias.de.ejemplo");
+
+        alert("Alias copiado");
+
+    }catch{
+
+        alert("No se pudo copiar");
+
+    }
+
+});
+
+// Animación al aparecer
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+    observer.observe(section);
+
+});
+
+</script>
+
+</body>
+</html>
