@@ -216,6 +216,23 @@ if (btnMusica) {
   });
 }
 
+//LINKS DE BOTONES _ Confirmar
+const btnConfirmar = document.querySelector('.btn-confirmar');
+
+if (btnConfirmar) {
+  btnConfirmar.addEventListener('click', () => {
+
+    const numero = "5492215364043";
+
+    const mensaje = "¡Hola! Confirmo mi asistencia a los 15 💖";
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+
+  });
+}
+
 //LINKS DE BOTONES _ Fotos
 const btnFotos = document.querySelector('.btn-fotos');
 
