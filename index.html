@@ -16,6 +16,11 @@
 
 <main>
 
+<!-- MUSICA -->
+<audio id="musicaFondo" loop>
+  <source src="assets/cancion.mp3" type="audio/mpeg">
+</audio>
+
   <!-- INICIO -->
   <section id="inicio">
     <img class="tarjeta" src="" alt="Inicio">
@@ -276,6 +281,22 @@ document.querySelectorAll("section").forEach(section=>{
     observer.observe(section);
 
 });
+
+//Musica fondo
+const musica = document.getElementById("musicaFondo");
+
+function iniciarMusica() {
+  musica.play().catch(error => {
+    console.log("No se pudo iniciar la música:", error);
+  });
+
+  // Evita que vuelva a ejecutarse
+  document.removeEventListener("click", iniciarMusica);
+  document.removeEventListener("touchstart", iniciarMusica);
+}
+
+document.addEventListener("click", iniciarMusica);
+document.addEventListener("touchstart", iniciarMusica);
 
 </script>
 
