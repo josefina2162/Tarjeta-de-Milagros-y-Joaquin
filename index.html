@@ -21,6 +21,10 @@
   <source src="assets/cancion.mp3" type="audio/mpeg">
 </audio>
 
+<button id="btnMusica" class="btn-musica-flotante">
+    <img id="iconoMusica" src="assets/musica_off.svg" alt="Música">
+</button>
+
   <!-- INICIO -->
   <section id="inicio">
     <img class="tarjeta" src="" alt="Inicio">
@@ -284,19 +288,29 @@ document.querySelectorAll("section").forEach(section=>{
 
 //Musica fondo
 const musica = document.getElementById("musicaFondo");
+const botonMusica = document.getElementById("btnMusica");
+const iconoMusica = document.getElementById("iconoMusica");
 
-function iniciarMusica() {
-  musica.play().catch(error => {
-    console.log("No se pudo iniciar la música:", error);
-  });
+let reproduciendo = false;
 
-  // Evita que vuelva a ejecutarse
-  document.removeEventListener("click", iniciarMusica);
-  document.removeEventListener("touchstart", iniciarMusica);
-}
+botonMusica.addEventListener("click", () => {
 
-document.addEventListener("click", iniciarMusica);
-document.addEventListener("touchstart", iniciarMusica);
+    if(reproduciendo){
+
+        musica.pause();
+        iconoMusica.src = "assets/musica_off.svg";
+        reproduciendo = false;
+
+    }else{
+
+        musica.play();
+
+        iconoMusica.src = "assets/musica_on.svg";
+        reproduciendo = true;
+
+    }
+
+});
 
 </script>
 
