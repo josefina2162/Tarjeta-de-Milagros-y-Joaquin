@@ -120,16 +120,7 @@
     -->
   </section>
 
-  <!-- POPUP REGALOS -->
-<div id="popup-regalos">
-
-    <img id="img-popup" class="tarjeta" src="" alt="Alias">
-
-    <button class="btn-cerrar-popup"></button>
-
-    <button class="btn-copiar-alias"></button>
-
-</div>
+ 
 </main>
 
 <script>
@@ -183,8 +174,6 @@ function cargarImagenes() {
   document.querySelector('#instagram .tarjeta').src =
     'assets/Instagram' + sufijo;
   
-  document.querySelector('#img-popup').src =
-    'assets/Alias' + sufijo;
 }
 
 window.addEventListener('load', cargarImagenes);
@@ -242,42 +231,28 @@ if (btnFotos) {
   });
 }
 
-//Boton regalos
-const popup = document.getElementById("popup-regalos");
-
+// BOTÓN REGALOS
 const btnRegalos = document.querySelector(".btn-regalos");
 
-const btnCerrar = document.querySelector(".btn-cerrar-popup");
+if (btnRegalos) {
 
-const btnCopiar = document.querySelector(".btn-copiar-alias");
+    btnRegalos.addEventListener("click", async () => {
 
-btnRegalos.addEventListener("click", () => {
+        try {
 
-    popup.classList.add("mostrar");
+            await navigator.clipboard.writeText("mili.joaco.mz");
 
-});
+            alert("¡Alias copiado al portapapeles!");
 
-btnCerrar.addEventListener("click", () => {
+        } catch (err) {
 
-    popup.classList.remove("mostrar");
+            alert("No se pudo copiar el alias.");
 
-});
+        }
 
-btnCopiar.addEventListener("click", async () => {
+    });
 
-    try{
-
-        await navigator.clipboard.writeText("0000003100018572462085");
-
-        alert("Alias copiado");
-
-    }catch{
-
-        alert("No se pudo copiar");
-
-    }
-
-});
+}
 
 // Animación al aparecer
 

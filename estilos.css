@@ -108,67 +108,6 @@ section{
 
 /* Botón regalos */
 
-/* POPUP */
-
-#popup-regalos{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0, 0, 0, 0);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:9999;
-
-}
-
-#popup-regalos.mostrar{
-
-    display:flex;
-
-}
-
-#popup-regalos img{
-
-    width:100%;
-
-    max-width:500px;
-
-    display:block;
-
-}
-
-/* el popup necesita posición relativa */
-
-#popup-regalos{
-
-    position:fixed;
-
-}
-
-#popup-regalos img{
-
-    position:relative;
-
-}
-
-/* BOTON CERRAR */
-
-.btn-cerrar-popup{
-    position: absolute;
-    top: 30%;
-    width:500px;
-    height: 180px;
-    background:rgba(255, 0, 0, 0);
-    opacity:.4;
-    border:none;
-}
 
 /* BOTON COPIAR */
 
@@ -219,4 +158,26 @@ section.visible{
 .btn-musica-flotante img{
     width:100%;
     display:block;
+}
+
+/* Elimina el resaltado azul al tocar botones */
+button,
+button:focus,
+button:active,
+button:focus-visible {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* También para links, por si después usás <a> */
+a,
+a:focus,
+a:active,
+a:focus-visible {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
 }
