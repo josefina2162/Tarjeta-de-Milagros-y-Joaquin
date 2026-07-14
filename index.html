@@ -205,20 +205,12 @@ if (btnMusica) {
   });
 }
 
-//LINKS DE BOTONES _ Confirmar
+// LINKS DE BOTONES _ Confirmar
 const btnConfirmar = document.querySelector('.btn-confirmar');
 
 if (btnConfirmar) {
   btnConfirmar.addEventListener('click', () => {
-
-    const numero = "5492215364043";
-
-    const mensaje = "¡Hola! Confirmo mi asistencia a los 15 💖";
-
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
-
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSeKWuqFrkcvnQwmBN0ZXf60Eq0T1mUGqUaWxS_mm7uDI2n5wQ/viewform?usp=header', '_blank');
   });
 }
 
